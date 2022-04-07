@@ -21,6 +21,8 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
+        let tblBackColor: UIColor = UIColor.clear
+            tableView.backgroundColor = tblBackColor
         tableView.register(UINib(nibName: "ToDoListXibTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell1")
     }
     

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--やりたい事リスト-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="ToDoListViewController" customModule="NewWillDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HDh-iH-pbD" secondAttribute="trailing" id="pZi-oF-L7J"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mZJ-DH-puz"/>
+                    <tabBarItem key="tabBarItem" title="やりたい事リスト" image="list.bullet.rectangle" catalog="system" id="mZJ-DH-puz"/>
                     <navigationItem key="navigationItem" id="jl0-Dh-0xS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jpp-Wm-2Dh">
                             <connections>
@@ -147,6 +147,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="44E1CE08-E267-4BF7-A85C-BEC3CBF266DE_1_201_a" width="736" height="1104"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
