@@ -20,6 +20,5 @@ class EditingTimerViewController: UIViewController {
     @IBAction func decisionButtonAciton(_ sender: Any) {
         
     performSegue(withIdentifier: "exitFromEditByBackSegue", sender: nil)
-        
     }
 }
