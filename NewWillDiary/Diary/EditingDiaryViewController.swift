@@ -23,13 +23,17 @@ class EditingDiaryViewController: UIViewController, UITextViewDelegate {
         diaryDescriptionTextView.layer.cornerRadius = 10.0
         diaryDescriptionTextView.layer.masksToBounds = true
         
-        selectDateLabel.text = pushDate
+        if let pushDate = pushDate {
+            selectDateLabel.text = pushDate
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) { // TODO: 解読
         super.viewWillAppear(animated)
 
-        selectDateLabel.text = pushDate
+        if let pushDate = pushDate {
+            selectDateLabel.text = pushDate
+        }
         
         DispatchQueue(label: "background").async { // TODO: 解読
             let realm = try! Realm()

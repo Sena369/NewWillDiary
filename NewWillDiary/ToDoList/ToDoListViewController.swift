@@ -21,17 +21,15 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
-        let tblBackColor: UIColor = UIColor.clear
-            tableView.backgroundColor = tblBackColor
         tableView.register(UINib(nibName: "ToDoListXibTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell1")
+        tableView.backgroundColor = UIColor.clear
+
     }
     
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        tableView.estimatedRowHeight = 50 //セルの高さ
-//        tableView.rowHeight = UITableView.automaticDimension
-        return UITableView.automaticDimension //自動設定
+        return UITableView.automaticDimension // 自動設定
      }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +59,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "EditSegue", sender: indexPath)
+        performSegue(withIdentifier: "editSegue", sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -79,11 +77,11 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         if let add = (segue.destination as? UINavigationController)?.topViewController as? AddListViewController {
             
             switch segue.identifier ?? "" {
-            case "AddSegue":
-            add.mode = AddListViewController.Mode.Add
+            case "addSegue":
+            add.mode = AddListViewController.Mode.add
                 break
-            case "EditSegue":
-            add.mode = AddListViewController.Mode.Edit
+            case "editSegue":
+            add.mode = AddListViewController.Mode.edit
                 if let indexPath = sender {
                     let item = self.results[(indexPath as AnyObject).row]
                     add.detailedItem = item.detailedItem

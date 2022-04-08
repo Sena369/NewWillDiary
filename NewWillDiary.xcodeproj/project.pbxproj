@@ -64,6 +64,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D35BA03527FFCC8A007B7B0D /* CountDownTimer */ = {
+			isa = PBXGroup;
+			children = (
+				D3629BB727FEB27F0010342D /* CountDownTimerViewController.swift */,
+				D3629BB927FEB28D0010342D /* EditingTimerViewController.swift */,
+				D3629BC727FEB2F00010342D /* CountDownTimer.storyboard */,
+			);
+			path = CountDownTimer;
+			sourceTree = "<group>";
+		};
+		D35BA03627FFCCB1007B7B0D /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				D3629BBF27FEB2B60010342D /* ToDoListViewController.swift */,
+				D3629BC327FEB2DF0010342D /* ToDoListXibTableViewCell.swift */,
+				D3629BC127FEB2C20010342D /* AddListViewController.swift */,
+				D3629BCB27FEB3020010342D /* ToDoList.storyboard */,
+				D3629BC427FEB2DF0010342D /* ToDoListXibTableViewCell.xib */,
+			);
+			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		D35BA03727FFCD27007B7B0D /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				D3629BBB27FEB2A30010342D /* WillDiaryViewController.swift */,
+				D3629BBD27FEB2AD0010342D /* EditingDiaryViewController.swift */,
+				D3629BC927FEB2F90010342D /* WillDiary.storyboard */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		D35BA03827FFCDB8007B7B0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3629BCD27FEB32E0010342D /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D3629B9727FEB23F0010342D = {
 			isa = PBXGroup;
 			children = (
@@ -85,21 +125,13 @@
 		D3629BA227FEB23F0010342D /* NewWillDiary */ = {
 			isa = PBXGroup;
 			children = (
+				D35BA03827FFCDB8007B7B0D /* Model */,
+				D35BA03527FFCC8A007B7B0D /* CountDownTimer */,
+				D35BA03727FFCD27007B7B0D /* Diary */,
+				D35BA03627FFCCB1007B7B0D /* ToDoList */,
 				D3629BA327FEB23F0010342D /* AppDelegate.swift */,
 				D3629BA527FEB23F0010342D /* SceneDelegate.swift */,
 				D3629BA927FEB23F0010342D /* Main.storyboard */,
-				D3629BCD27FEB32E0010342D /* DataModel.swift */,
-				D3629BB727FEB27F0010342D /* CountDownTimerViewController.swift */,
-				D3629BB927FEB28D0010342D /* EditingTimerViewController.swift */,
-				D3629BBB27FEB2A30010342D /* WillDiaryViewController.swift */,
-				D3629BBD27FEB2AD0010342D /* EditingDiaryViewController.swift */,
-				D3629BBF27FEB2B60010342D /* ToDoListViewController.swift */,
-				D3629BC127FEB2C20010342D /* AddListViewController.swift */,
-				D3629BC327FEB2DF0010342D /* ToDoListXibTableViewCell.swift */,
-				D3629BC727FEB2F00010342D /* CountDownTimer.storyboard */,
-				D3629BC927FEB2F90010342D /* WillDiary.storyboard */,
-				D3629BCB27FEB3020010342D /* ToDoList.storyboard */,
-				D3629BC427FEB2DF0010342D /* ToDoListXibTableViewCell.xib */,
 				D3629BAE27FEB2410010342D /* LaunchScreen.storyboard */,
 				D3629BAC27FEB2410010342D /* Assets.xcassets */,
 				D3629BB127FEB2410010342D /* Info.plist */,

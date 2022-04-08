@@ -10,11 +10,11 @@ import UIKit
 class AddListViewController: UIViewController {
 
     enum Mode {
-        case Add
-        case Edit
+        case add
+        case edit
     }
     
-    var mode = Mode.Add
+    var mode = Mode.add
     var detailedItem = ""
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class AddListViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        if mode == .Edit {
+        if mode == .edit {
             detailedItemTextField.text = detailedItem
         }
     }
@@ -31,7 +31,7 @@ class AddListViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender: Any) {
         
-        if mode == .Add {
+        if mode == .add {
             let identifier = "exitFromAddBySaveSegue"
             performSegue(withIdentifier: identifier, sender: sender)
         } else {
@@ -42,7 +42,7 @@ class AddListViewController: UIViewController {
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         
-        if mode == .Add {
+        if mode == .add {
             let identifier = "exitFromAddByCancelSegue"
             performSegue(withIdentifier: identifier, sender: sender)
         } else {

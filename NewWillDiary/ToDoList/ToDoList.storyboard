@@ -41,14 +41,14 @@
                     <navigationItem key="navigationItem" id="jl0-Dh-0xS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jpp-Wm-2Dh">
                             <connections>
-                                <segue destination="CX4-5f-iqk" kind="show" identifier="AddSegue" id="XuW-HE-XiT"/>
+                                <segue destination="CX4-5f-iqk" kind="show" identifier="addSegue" id="XuW-HE-XiT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="UO3-HK-Uqt" id="zMq-jz-r8f"/>
-                        <segue destination="CX4-5f-iqk" kind="show" identifier="EditSegue" id="v2A-rg-pFw"/>
+                        <segue destination="CX4-5f-iqk" kind="show" identifier="editSegue" id="v2A-rg-pFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -143,7 +143,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="v2A-rg-pFw"/>
+        <segue reference="XuW-HE-XiT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="44E1CE08-E267-4BF7-A85C-BEC3CBF266DE_1_201_a" width="736" height="1104"/>
