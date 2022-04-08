@@ -38,7 +38,7 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
         }
     }
     
-    func realm () -> String {
+    func realm () -> String { // TODO: メソッド名の変更
         
         let realm = try! Realm()
 
@@ -99,7 +99,7 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
         let tmpCalendar = Calendar(identifier: .gregorian)
         return tmpCalendar.component(.weekday, from: date)
     }
-    
+    // TODO: コードを引っ張ってきたURLを貼っておく
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         
         calendarView.calendarWeekdayView.weekdayLabels[0].textColor = UIColor.red

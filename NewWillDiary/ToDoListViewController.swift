@@ -79,11 +79,11 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         if let add = (segue.destination as? UINavigationController)?.topViewController as? AddListViewController {
             
             switch segue.identifier ?? "" {
-            case "AddSegue":
-            add.mode = AddListViewController.Mode.Add
+            case "addSegue":
+            add.mode = AddListViewController.Mode.add
                 break
-            case "EditSegue":
-            add.mode = AddListViewController.Mode.Edit
+            case "editSegue":
+            add.mode = AddListViewController.Mode.edit
                 if let indexPath = sender {
                     let item = self.results[(indexPath as AnyObject).row]
                     add.detailedItem = item.detailedItem
