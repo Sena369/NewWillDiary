@@ -24,6 +24,7 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
         return formatter
     }()
     
+    // https://qiita.com/Koutya/items/f5c7c12ab1458b6addcd の記事を参考
     struct AssistCalendar {
         // 祝日判定を行い結果を返すメソッド（True：祝日）
         func judgeHoliday(_ date : Date) -> Bool {
@@ -90,7 +91,7 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
         self.performSegue(withIdentifier: "ToDiary", sender: nil)
     }
     
-    // TODO: コードを引っ張ってきたURLを貼っておく
+    // https://qiita.com/Koutya/items/f5c7c12ab1458b6addcd の記事を参考
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         
         // 曜日タイトルの色変更（土曜は青、日曜は赤）
@@ -113,6 +114,7 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
         return nil
     }
     
+    // 以降 https://qiita.com/shxun6934/items/e4e6e81cecf68b22bdc3 の記事を参考
     func makeDiaryDescription () -> String { // TODO: メソッド名の変更
         
         let realm = try! Realm()

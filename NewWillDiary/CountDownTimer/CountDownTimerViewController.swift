@@ -58,7 +58,8 @@ class CountDownTimerViewController: UIViewController {
     }
         
     func timerFunction(setDate: Date) -> String {
-            
+        
+        // https://qiita.com/isom0242/items/e83ab77a3f56f66edd2f の記事を参考
         let nowDate = Date() // 現在時刻
         let calendar = Calendar(identifier: .japanese) // 日本設定のカレンダーを指定
         // 現在時刻と設定時刻の差を算出
