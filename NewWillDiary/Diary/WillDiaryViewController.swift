@@ -24,38 +24,6 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
         return formatter
     }()
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        self.calendarView.delegate = self
-        self.calendarView.dataSource = self
-        
-        print(date)
-        print(pushDate)
-
-        DispatchQueue(label: "background").async {
-            DispatchQueue.main.async {
-                self.diaryDescriptionTextLabel.text = self.makeDiaryDescription()
-            }
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) { // TODO: 解読
-        super.viewWillAppear(animated)
-    }
-    
-    @IBOutlet weak var calendarView: FSCalendar!
-    @IBOutlet weak var diaryDescriptionTextLabel: UILabel!
-    
-    @IBAction func editButtonPushed(_ sender: Any) {
-        self.performSegue(withIdentifier: "ToDiary", sender: nil)
-    }
-    
     struct AssistCalendar {
         // 祝日判定を行い結果を返すメソッド（True：祝日）
         func judgeHoliday(_ date : Date) -> Bool {
@@ -89,7 +57,39 @@ class WillDiaryViewController: UIViewController, FSCalendarDelegate, FSCalendarD
             return tmpCalendar.component(.weekday, from: date)
         }
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        self.calendarView.delegate = self
+        self.calendarView.dataSource = self
+        
+        print(date)
+        print(pushDate)
 
+        DispatchQueue(label: "background").async {
+            DispatchQueue.main.async {
+                self.diaryDescriptionTextLabel.text = self.makeDiaryDescription()
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) { // TODO: 解読
+        super.viewWillAppear(animated)
+    }
+    
+    @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var diaryDescriptionTextLabel: UILabel!
+    
+    @IBAction func editButtonPushed(_ sender: Any) {
+        self.performSegue(withIdentifier: "ToDiary", sender: nil)
+    }
+    
     // TODO: コードを引っ張ってきたURLを貼っておく
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         
