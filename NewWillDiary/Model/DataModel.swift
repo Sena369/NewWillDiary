@@ -190,8 +190,45 @@ final class GoalSupportRepository {
             realm.delete(goal)
         }
     }
-    // MARK: -　Diary共通型に関するRepository
+}
     // TODO:　せなさんよろしく
+final class DiarySupportRepository {
+    private let realm = try! Realm()
+    // MARK: -　Diary共通型に関するRepository
+    func loadDiary() -> [Diary] {
+        let realmDiary = realm.objects(RealmDiary.self)
+        let realmDiaryArray = Array(realmDiary)
+        let diary = realmDiaryArray.map{ Diary( managedObject: $0) }
+        return diary
+    }
+        
+    func appendDiary(diary: Diary) {
+        try! realm.write {
+            let realmDiary = diary.managedObject()
+            realm.add(realmDiary)
+        }
+    }
+        
+    func updateDairy(diary: Diary) {
+        try! realm.write {
+            let realmDiary = realm.object(ofType: RealmDiary.self, forPrimaryKey: diary.uuidString)
+            realmDiary?.diaryText = diary.diaryText
+            realmDiary?.calendarDate = diary.calendarDate
+        }
+    }
+    
+    func removeDiary(diary: Diary) {
+        guard let diary = realm.object(
+            ofType: RealmDiary.self,
+            forPrimaryKey: diary.uuidString
+        ) else { return }
+        // swiftlint:disable:next force_cast
+        try! realm.write {
+            realm.delete(diary)
+        }
+    }
+    
+}
 
     // MARK: -　ToDoList共通型に関するRepository
     // TODO:　二人で画面共有しながら実装。
@@ -204,8 +241,6 @@ final class GoalSupportRepository {
         let toDoLists = realmToDoListArray.map{ToDoList(managedObject: $0)}
         return toDoLists
     }
-
-}
 
 // MARK: - せなさんコード
 class ToDoListModel: Object {
