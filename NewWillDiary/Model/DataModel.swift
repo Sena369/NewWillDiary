@@ -28,6 +28,7 @@ struct ToDoList {
     struct ToDoItem {
         var toDoText: String
         var isCheck: Bool
+        var createdAt: Date
     }
 }
 
@@ -81,6 +82,7 @@ class RealmToDoList: Object {
 class RealmToDoItem: Object {
     @objc dynamic var toDoText: String = ""
     @objc dynamic var isCheck: Bool = false
+    @objc dynamic var createdAt: Date = Date()
     let toDoItems = LinkingObjects(fromType: RealmToDoList.self, property: "toDoItems")
 
     convenience init(toDoText: String,isCheck: Bool) {
@@ -143,20 +145,60 @@ private extension ToDoList.ToDoItem {
     init(managedObject: RealmToDoItem) {
         self.isCheck = managedObject.isCheck
         self.toDoText = managedObject.toDoText
+        self.createdAt = managedObject.createdAt
     }
 
     func managedObject() -> RealmToDoItem {
         let realmToDoItem = RealmToDoItem()
         realmToDoItem.isCheck = self.isCheck
         realmToDoItem.toDoText = self.toDoText
+        realmToDoItem.createdAt = self.createdAt
         return realmToDoItem
     }
 }
-final class NewWillDiary {
+
+final class GoalSupportRepository {
     private let realm = try! Realm()
-// サンプル
+    // MARK: -　Goal共通型に関するRepository
+    func loadGoal() -> [Goal] {
+        let realmGoal = realm.objects(RealmGoal.self)
+        let realmGoalArray = Array(realmGoal)
+        let goal = realmGoalArray.map { Goal(managedObject: $0) }
+        return goal
+    }
+    func appendGoal(goal: Goal){
+        try! realm.write{
+            let realmGoal = goal.managedObject()
+            realm.add(realmGoal)
+        }
+    }
+    func updateGoal(goal: Goal){
+        try! realm.write {
+            let realmGoal = realm.object(ofType: RealmGoal.self, forPrimaryKey: goal.uuidString)
+            realmGoal?.goalText = goal.goalText
+            realmGoal?.goalDate = goal.goalDate
+        }
+    }
+
+    func removeGoal(goal: Goal) {
+        guard let goal = realm.object(
+            ofType: RealmGoal.self,
+            forPrimaryKey: goal.uuidString
+        ) else { return }
+        // swiftlint:disable:next force_cast
+        try! realm.write {
+            realm.delete(goal)
+        }
+    }
+    // MARK: -　Diary共通型に関するRepository
+    // TODO:　せなさんよろしく
+
+    // MARK: -　ToDoList共通型に関するRepository
+    // TODO:　二人で画面共有しながら実装。
+
+//　サンプル　実装に関係なし
     func load() -> [ToDoList]{
-        let toDoList = ToDoList(uuidString: UUID().uuidString, toDoItems: [ToDoList.ToDoItem(toDoText: "読書", isCheck: false)], toDoDate: Date())
+        let toDoList = ToDoList(uuidString: UUID().uuidString, toDoItems: [ToDoList.ToDoItem(toDoText: "読書", isCheck: false,createdAt: Date())], toDoDate: Date())
         let realmToDoList = realm.objects(RealmToDoList.self)
         let realmToDoListArray = Array(realmToDoList)
         let toDoLists = realmToDoListArray.map{ToDoList(managedObject: $0)}
@@ -164,13 +206,6 @@ final class NewWillDiary {
     }
 
 }
-
-
-
-
-
-
-
 
 // MARK: - せなさんコード
 class ToDoListModel: Object {
