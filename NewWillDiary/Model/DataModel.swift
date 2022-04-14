@@ -157,8 +157,9 @@ private extension ToDoList.ToDoItem {
     }
 }
 
-final class GoalSupportRepository {
+struct RealmRepository {
     private let realm = try! Realm()
+
     // MARK: -　Goal共通型に関するRepository
     func loadGoal() -> [Goal] {
         let realmGoal = realm.objects(RealmGoal.self)
@@ -190,10 +191,6 @@ final class GoalSupportRepository {
             realm.delete(goal)
         }
     }
-}
-    // TODO:　せなさんよろしく
-final class DiarySupportRepository {
-    private let realm = try! Realm()
     // MARK: -　Diary共通型に関するRepository
     func loadDiary() -> [Diary] {
         let realmDiary = realm.objects(RealmDiary.self)
@@ -227,8 +224,13 @@ final class DiarySupportRepository {
             realm.delete(diary)
         }
     }
-    
 }
+
+//final class GoalSupportRepository {
+//}
+    // TODO:　せなさんよろしく
+//final class DiarySupportRepository {
+//}
 
     // MARK: -　ToDoList共通型に関するRepository
     // TODO:　二人で画面共有しながら実装。
