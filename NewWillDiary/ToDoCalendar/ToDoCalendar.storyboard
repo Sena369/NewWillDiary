@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--日記-->
+        <!--カレンダー-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="WillDiaryViewController" customModule="NewWillDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                             <constraint firstItem="Qdh-nT-SsT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="xQP-hQ-z2S"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="日記" image="calendar" catalog="system" id="x3J-Y8-FEa"/>
+                    <tabBarItem key="tabBarItem" title="カレンダー" image="calendar" catalog="system" id="x3J-Y8-FEa"/>
                     <navigationItem key="navigationItem" id="e9u-CD-t6e">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="8Db-lW-MFs">
                             <connections>

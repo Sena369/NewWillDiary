@@ -27,20 +27,20 @@
             </objects>
             <point key="canvasLocation" x="-201" y="110"/>
         </scene>
-        <!--CountDownTimer-->
+        <!--Goal-->
         <scene sceneID="8YU-Gh-oZA">
             <objects>
-                <viewControllerPlaceholder storyboardName="CountDownTimer" id="IYH-Tn-aMQ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Goal" id="IYH-Tn-aMQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="362-0I-pAg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKk-O1-LHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="376" y="-149"/>
         </scene>
-        <!--WillDiary-->
+        <!--ToDoCalendar-->
         <scene sceneID="Gnz-LR-FBn">
             <objects>
-                <viewControllerPlaceholder storyboardName="WillDiary" id="6gW-Um-1wW" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ToDoCalendar" id="6gW-Um-1wW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="qgk-nY-atv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEe-Vf-5vQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
